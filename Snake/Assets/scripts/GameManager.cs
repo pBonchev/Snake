@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         MapGenerator.instance.CreateMap();
         AppleManager.instance.GrowApple();
+        Snake.instance.CreateSnakeParts();
 
         StartCoroutine(MoveSnake());
     }
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(1f);
+            Snake.instance.Move();
         }
     }
 }
